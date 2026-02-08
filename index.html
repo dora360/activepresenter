@@ -286,26 +286,6 @@
 			if ((PlayModes.TEST & opmodes) != PlayModes.TEST)
 				hideElement("ap-mode-test");
 		}
-		
-	<script>
-		function sendResultToSheet(name, score) {
-			fetch("https://script.google.com/macros/s/AKfycbzzkt8ja-230OsRWGlhjw6s8mV8Z9a8W4eB4EYGyJpFrE6O32FobetySUS_aSwJJwJV/exec", {
-				method: "POST",
-				body: JSON.stringify({name: name, score: score}),
-				headers: {"Content-Type": "application/json"}
-			})
-			.then(response => console.log("Result sent"))
-			.catch(error => console.error("Error:", error));
-		}
-
-		// Example trigger after label selection
-		function submitLabelResult() {
-			const studentName = prompt("Enter your name:");
-			const score = selectedLabel; // You can replace this with a numeric score if available
-			sendResultToSheet(studentName, score);
-			alert("Your result has been submitted!");
-		}
 	</script>
 </body>
 </html>
-
